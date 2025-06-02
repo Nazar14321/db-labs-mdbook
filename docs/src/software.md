@@ -1,3 +1,8 @@
+# Реалізація інформаційного та програмного забезпечення
+
+## SQL-скрипт для створення на початкового наповнення бази даних
+
+```sql
 
 
 CREATE TABLE `User` (
@@ -162,3 +167,9 @@ CREATE TABLE `Event` (
     ON UPDATE CASCADE
 ) ENGINE=InnoDB
   DEFAULT CHARSET = utf8mb4;
+
+
+```
+
+
+
