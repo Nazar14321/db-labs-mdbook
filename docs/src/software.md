@@ -3,7 +3,6 @@
 ## SQL-скрипт для створення на початкового наповнення бази даних
 
 ```sql
-USE lab5;
 
 CREATE TABLE `Project` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -203,7 +202,7 @@ VALUES
   (UUID(), 'eve','eve@example.com','evepass','https://example.com/photos/eve.jpeg',4);
 
 
-INSERT INTO `Role` (`name`,        `description`,                         `project_id`)
+INSERT INTO `Role` (`name`, `description`, `project_id`)
 VALUES
   ('Developer', 'Writes code and implements features', 1),
   ('Tester', 'Performs QA and test cases', 1),
@@ -258,12 +257,12 @@ SELECT u.`id`, 3, 4, 4 FROM `User` u WHERE u.`nickname` = 'eve';
 
 INSERT INTO `Task` (`name`,         `description`,                 `startDate`,           `deadlineDate`,        `team_id`)
 VALUES
-  ('Design DB Schema', 'Спроектувати структуру БД',    '2025-06-01 09:00:00', '2025-06-05 17:00:00', 1),
+  ('Design DB Schema', 'Спроектувати структуру БД', '2025-06-01 09:00:00', '2025-06-05 17:00:00', 1),
   ('Implement Auth',   'Реалізувати систему логінації', '2025-06-02 10:00:00', '2025-06-07 12:00:00', 1),
-  ('Write Tests',      'Написати юніт‐тести',         '2025-06-03 11:00:00', '2025-06-10 15:00:00', 2),
-  ('Deploy to Staging','Розгорнути на стейджингу',    '2025-06-04 14:00:00', '2025-06-08 18:00:00', 2),
-  ('Beta Feature A',   'Розробка фічі для Beta',      '2025-06-01 09:30:00', '2025-06-10 16:00:00', 3),
-  ('Gamma Setup',      'Налаштувати середовище',      '2025-06-05 08:00:00', NULL,                  4);
+  ('Write Tests',      'Написати юніт‐тести', '2025-06-03 11:00:00', '2025-06-10 15:00:00', 2),
+  ('Deploy to Staging','Розгорнути на стейджингу', '2025-06-04 14:00:00', '2025-06-08 18:00:00', 2),
+  ('Beta Feature A',   'Розробка фічі для Beta', '2025-06-01 09:30:00', '2025-06-10 16:00:00', 3),
+  ('Gamma Setup',      'Налаштувати середовище', '2025-06-05 08:00:00', NULL, 4);
 
 
 
