@@ -3,9 +3,7 @@ from sqlalchemy.dialects.mysql import CHAR, INTEGER, TEXT, TIMESTAMP
 
 db = SQLAlchemy()
 
-# ------------------------------------------------------------
-# 1. Клас User
-# ------------------------------------------------------------
+
 class User(db.Model):
     __tablename__ = 'User'  # Якщо у вас назва таблиці була саме з великої літери
 
@@ -15,27 +13,16 @@ class User(db.Model):
     password  = db.Column(TEXT, nullable=False)
     photo     = db.Column(TEXT, nullable=True)
 
-    # Наприклад, можна додати зв’язки (relationship) з іншими моделями:
-    # projects = db.relationship('UserProject', backref='user', lazy='dynamic')
 
 
-# ------------------------------------------------------------
-# 2. Клас Project
-# ------------------------------------------------------------
+
 class Project(db.Model):
     __tablename__ = 'Project'
 
     id   = db.Column(INTEGER, primary_key=True, autoincrement=True)
     name = db.Column(TEXT, nullable=False)
 
-    # teams = db.relationship('Team', backref='project', lazy='dynamic')
-    # roles = db.relationship('Role', backref='project', lazy='dynamic')
-    # user_projects = db.relationship('UserProject', backref='project', lazy='dynamic')
 
-
-# ------------------------------------------------------------
-# 3. Клас Team
-# ------------------------------------------------------------
 class Team(db.Model):
     __tablename__ = 'Team'
 
@@ -43,12 +30,7 @@ class Team(db.Model):
     name       = db.Column(TEXT, nullable=False)
     project_id = db.Column(INTEGER, db.ForeignKey('Project.id', ondelete='CASCADE', onupdate='CASCADE'), nullable=False)
 
-    # tasks = db.relationship('Task', backref='team', lazy='dynamic')
 
-
-# ------------------------------------------------------------
-# 4. Клас Role
-# ------------------------------------------------------------
 class Role(db.Model):
     __tablename__ = 'Role'
 
@@ -57,13 +39,7 @@ class Role(db.Model):
     description = db.Column(TEXT, nullable=True)
     project_id  = db.Column(INTEGER, db.ForeignKey('Project.id', ondelete='CASCADE', onupdate='CASCADE'), nullable=False)
 
-    # role_actions = db.relationship('RoleAction', backref='role', lazy='dynamic')
-    # user_projects = db.relationship('UserProject', backref='role', lazy='dynamic')
 
-
-# ------------------------------------------------------------
-# 5. Клас UserProject (зв’язок користувачів з проєктами)
-# ------------------------------------------------------------
 class UserProject(db.Model):
     __tablename__ = 'User_Project'
 
@@ -74,9 +50,6 @@ class UserProject(db.Model):
     team_id    = db.Column(INTEGER, db.ForeignKey('Team.id', ondelete='SET NULL', onupdate='CASCADE'), nullable=True)
 
 
-# ------------------------------------------------------------
-# 6. Клас Task
-# ------------------------------------------------------------
 class Task(db.Model):
     __tablename__ = 'Task'
 
@@ -87,12 +60,9 @@ class Task(db.Model):
     deadlineDate = db.Column(TIMESTAMP, nullable=True)
     team_id      = db.Column(INTEGER, db.ForeignKey('Team.id', ondelete='CASCADE', onupdate='CASCADE'), nullable=False)
 
-    # artifacts = db.relationship('Artifact', backref='task', lazy='dynamic')
 
 
-# ------------------------------------------------------------
-# 7. Клас Artifact
-# ------------------------------------------------------------
+
 class Artifact(db.Model):
     __tablename__ = 'Artifact'
 
@@ -103,21 +73,13 @@ class Artifact(db.Model):
     task_id  = db.Column(INTEGER, db.ForeignKey('Task.id', ondelete='CASCADE', onupdate='CASCADE'), nullable=False)
 
 
-# ------------------------------------------------------------
-# 8. Клас Action
-# ------------------------------------------------------------
 class Action(db.Model):
     __tablename__ = 'Action'
 
     id     = db.Column(INTEGER, primary_key=True, autoincrement=True)
     action = db.Column(TEXT, unique=True, nullable=False)
 
-    # role_actions = db.relationship('RoleAction', backref='action', lazy='dynamic')
 
-
-# ------------------------------------------------------------
-# 9. Клас RoleAction
-# ------------------------------------------------------------
 class RoleAction(db.Model):
     __tablename__ = 'Role_Action'
 
@@ -126,9 +88,6 @@ class RoleAction(db.Model):
     action_id = db.Column(INTEGER, db.ForeignKey('Action.id', ondelete='CASCADE', onupdate='CASCADE'), nullable=False)
 
 
-# ------------------------------------------------------------
-# 10. Клас Event
-# ------------------------------------------------------------
 class Event(db.Model):
     __tablename__ = 'Event'
 
