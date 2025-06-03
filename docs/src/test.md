@@ -59,7 +59,7 @@
 ![image](https://github.com/user-attachments/assets/d1d80bc8-9b2b-4e95-93d6-2ec0b53587e6)
 ![image](https://github.com/user-attachments/assets/5a242720-0601-4e37-9e6c-3ad0fce7e23a)
 
-### DELETE: видалити проект
+### DELETE: видалити команду
 
 ![image](https://github.com/user-attachments/assets/589fc4d0-9530-4ffd-a009-824a2c8bb6ce)
 ![image](https://github.com/user-attachments/assets/cbba47df-67d8-475e-b40f-fbcaa95d8226)
