@@ -2,15 +2,18 @@
 
 ### Запуск сервера
 
-![image](https://github.com/user-attachments/assets/9974304e-d4a2-4869-996d-03d92659a3cd)
+
 
 ## Перевірка працездатности сервісів
+![image](https://github.com/user-attachments/assets/7dddd0ab-01bf-4e61-bec4-422437bce8c9)
+![image](https://github.com/user-attachments/assets/24bcd52c-4856-415d-9094-b890509cfe8c)
 
 ### Список запитів
 
-![image](https://github.com/user-attachments/assets/79fafe5a-02e9-415d-a96c-85358cb15efc)
+![image](https://github.com/user-attachments/assets/e9b0d888-db9b-4c79-a458-bcfe69d7bd7f)
 
-### GET: отримати всі команди
+
+### GET: отримати всіх користувачів
 
 ![image](https://github.com/user-attachments/assets/508ec8a3-1f6a-4800-82f1-88aea9d56f0c)
 
